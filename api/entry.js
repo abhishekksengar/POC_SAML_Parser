@@ -2,6 +2,8 @@ const cors = require('cors');
 const express = require('express');
 const bodyParser = require('body-parser');
 const xmlParser = require('express-xml-bodyparser');
+const saml2 = require('saml2-js');
+const fs = require('fs');
 
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
@@ -29,6 +31,7 @@ app.use((req, res, next) => {
     ));
     next();
 });
+
 app.use((req, res, next) => {
     res.header('Cache-Control', 'no-store');
     res.header('Expires', '-1');
