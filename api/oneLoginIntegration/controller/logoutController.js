@@ -1,6 +1,7 @@
 const parser = require('saml20');
 const saml2 = require('saml2-js');
 const fs = require('fs');
+const config = require('../../config/config');
 
 const sp_options = config.sp_options;
 const sp = new saml2.ServiceProvider(sp_options);
